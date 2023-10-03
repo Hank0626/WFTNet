@@ -12,9 +12,7 @@ def pair(t):
     return t if isinstance(t, tuple) else (t, t)
 
 def FFT_for_Period(x, k=2):
-    # [B, T, C]
     xf = torch.fft.rfft(x, dim=1)
-    # find period by amplitudes
     frequency_list = abs(xf).mean(0).mean(-1)
     frequency_list[0] = 0
     _, top_list = torch.topk(frequency_list, k)
@@ -24,9 +22,7 @@ def FFT_for_Period(x, k=2):
 
 
 def Wavelet_for_Period(x, scale=16):
-    # scales = np.arange(1, 1+scale)
     scales = 2 ** np.linspace(-1, scale, 8)
-    # coeffs, freqs = pywt.cwt(x.detach().cpu().numpy(), scales, 'morl')
     coeffs, freqs = ptwt.cwt(x, scales, "morl")
     return coeffs, freqs
 
@@ -118,10 +114,6 @@ class Wavelet(nn.Module):
 
 
 class Model(nn.Module):
-    """
-    Paper link: https://openreview.net/pdf?id=ju_Uqw384Oq
-    """
-
     def __init__(self, configs):
         super(Model, self).__init__()
         self.configs = configs
