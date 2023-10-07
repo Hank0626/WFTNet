@@ -19,8 +19,7 @@ class Exp_Long_Term_Forecast(Exp_Basic):
 
     def _build_model(self):
         self.args.period_coeff = period_coeff(self.args)
-        # self.args.period_coeff = 1
-        print(self.args.period_coeff)
+        print(f"alpha={self.args.period_coeff:.2f}")
         model = self.model_dict[self.args.model].Model(self.args).float()
 
         if self.args.use_multi_gpu and self.args.use_gpu:

@@ -87,15 +87,11 @@ class Wavelet(nn.Module):
                 1).unsqueeze(1).repeat(1, T, N, 1)
 
         # Wavelet
-        # (B, T, N)
         coeffs = Wavelet_for_Period(x.permute(0, 2, 1), self.scale)[0].permute(1, 2, 0, 3).float()
-        # (B, N, S, T)
 
         wavelet_res = self.period_conv(coeffs)
-        # (B, N, S, T)
 
         wavelet_res = self.scale_conv(wavelet_res).squeeze(2).permute(0, 2, 1)
-        # (B, N, T)
 
         if len(res) > 0:
             
