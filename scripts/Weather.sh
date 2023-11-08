@@ -3,7 +3,6 @@ export CUDA_VISIBLE_DEVICES=0
 model_name=Wavelet
 
 python -u run.py \
-  --task_name long_term_forecast \
   --is_training 1 \
   --root_path ./dataset/weather/ \
   --data_path weather.csv \
@@ -29,7 +28,6 @@ python -u run.py \
   --train_epochs 2
 
 python -u run.py \
-  --task_name long_term_forecast \
   --is_training 1 \
   --root_path ./dataset/weather/ \
   --data_path weather.csv \
@@ -54,7 +52,6 @@ python -u run.py \
   --wavelet_scale 1
 
 python -u run.py \
-  --task_name long_term_forecast \
   --is_training 1 \
   --root_path ./dataset/weather/ \
   --data_path weather.csv \
@@ -80,7 +77,6 @@ python -u run.py \
   --train_epochs 5
 
 python -u run.py \
-  --task_name long_term_forecast \
   --is_training 1 \
   --root_path ./dataset/weather/ \
   --data_path weather.csv \
