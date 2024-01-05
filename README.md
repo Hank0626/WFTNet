@@ -1,6 +1,6 @@
 # WFTNet: Exploiting Global and Local Periodicity in Long-term Time Series Forecasting
 
-[![](http://img.shields.io/badge/cs.CV-arXiv%3A2309.11319-B31B1B.svg)](https://arxiv.org/abs/2309.11319v1)
+[![](http://img.shields.io/badge/cs.CV-arXiv%3A2309.11319-B31B1B.svg)](https://arxiv.org/abs/2309.11319)
 
 This is an official implementation of [WFTNet: Exploiting Global and Local Periodicity in Long-term Time Series Forecasting](https://arxiv.org/abs/2309.11319v1).
 
